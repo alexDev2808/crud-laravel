@@ -42,7 +42,8 @@ class EmpleadoController extends Controller
             $datosEmpleado['Foto'] = $request->file('Foto')->store('uploads', 'public');
         }
         Empleado::insert($datosEmpleado);
-        return response()->json($datosEmpleado);
+        // return response()->json($datosEmpleado);
+        return view('empleado.index');
     }
 
     /**
@@ -64,7 +65,7 @@ class EmpleadoController extends Controller
      */
     public function edit(Empleado $empleado)
     {
-        //
+        return view('empleado.edit');
     }
 
     /**

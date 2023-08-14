@@ -1,1 +1,4 @@
-Formulario de edicion de empleado
+{{-- Formulario de edicion de empleado --}}
+
+<p>Editar</p>
+@include('empleado.form')

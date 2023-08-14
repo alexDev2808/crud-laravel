@@ -23,7 +23,9 @@ Mostrar lista de empleados
       @foreach ($empleados as $empleado)
         <tr class="table-primary">
           <td>{{ $empleado->id }}</td>
-          <td>{{ $empleado->Foto }}</td>
+          <td>
+            <img src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen" />
+          </td>
           <td>{{ $empleado->Nombre }}</td>
           <td>{{ $empleado->ApellidoPaterno }}</td>
           <td>{{ $empleado->ApellidoMaterno }}</td>

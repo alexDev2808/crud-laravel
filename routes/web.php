@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmpleadoController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 // Route::get('/empleado', function () {
 //     return view('empleado.index');
@@ -25,4 +26,8 @@ Route::get('/', function () {
 Route::resource('empleado', EmpleadoController::class);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [EmpleadoController::class, 'index'])->name('home');
+});

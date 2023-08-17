@@ -1,20 +1,21 @@
 {{-- Formulario que tendra los datos en comun con create y edit --}}
 
 <label for="Nombre">Nombre</label>
-<input type="text" name="Nombre" id="Nombre" value="{{ $empleado->Nombre }}">
+<input type="text" name="Nombre" id="Nombre" value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}">
 
 <label for="ApellidoPaterno">Apellido Paterno</label>
-<input type="text" name="ApellidoPaterno" id="ApellidoPaterno" value="{{ $empleado->ApellidoPaterno }}">
+<input type="text" name="ApellidoPaterno" id="ApellidoPaterno" value="{{ isset($empleado->ApellidoPaterno) ? $empleado->ApellidoPaterno : '' }}">
 
 <label for="ApellidoMaterno">Apellido Materno</label>
-<input type="text" name="ApellidoMaterno" id="ApellidoMaterno" value="{{ $empleado->ApellidoMaterno }}">
+<input type="text" name="ApellidoMaterno" id="ApellidoMaterno" value="{{ isset($empleado->ApellidoMaterno) ? $empleado->ApellidoMaterno : '' }}">
 
 <label for="Correo">Correo</label>
-<input type="text" name="Correo" id="Correo" value="{{ $empleado->Correo }}">
+<input type="text" name="Correo" id="Correo" value="{{ isset($empleado->Correo) ? $empleado->Correo : '' }}">
 
 <label for="Foto">Foto</label>
-{{ $empleado->Foto }}
-<img src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen" />
+@if (@isset($empleado->Foto))
+    <img src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen" />
+@endif
 
 <input type="file" name="Foto" id="Foto" value="">
 

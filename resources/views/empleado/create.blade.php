@@ -8,7 +8,7 @@
       enctype="multipart/form-data">
       @csrf
 
-      @include('empleado.form', ['modo' => 'Crear']);
+      @include('empleado.form', ['modo' => 'Crear'])
 
     </form>
   </div>

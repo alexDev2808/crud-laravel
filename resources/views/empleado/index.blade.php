@@ -8,17 +8,18 @@
       {{ Session::get('mensaje') }}
     @endif
 
-    <a href="{{ route('empleado.create') }}">Registar nuevo
+    <a href="{{ route('empleado.create') }}"
+      class="btn btn-success mb-4">Registar nuevo
       empleado</a>
     <div class="table-responsive-md">
       <table
         class="table table-striped
     table-hover	
     table-borderless
-    table-light
+    table-dark
     align-middle">
-        <thead class="table-light">
-          <caption>Table Name</caption>
+        <thead>
+          <caption>Contactos</caption>
           <tr>
             <th>#</th>
             <th>Foto</th>
@@ -31,10 +32,10 @@
         </thead>
         <tbody class="table-group-divider">
           @foreach ($empleados as $empleado)
-            <tr class="table-primary">
+            <tr class="table-dark">
               <td>{{ $empleado->id }}</td>
               <td>
-                <img
+                <img class="img-thumbnail img-fluid"
                   src="{{ asset('storage') . '/' . $empleado->Foto }}"
                   alt="Imagen" />
               </td>
@@ -44,18 +45,17 @@
               <td>{{ $empleado->Correo }}</td>
               <td>
 
-                <a
-                  href="{{ route('empleado.edit', $empleado->id) }}">Editar</a>
-
-                |
+                <a href="{{ route('empleado.edit', $empleado->id) }}"
+                  class="btn btn-warning my-2">Editar</a>
 
                 <form
                   action="{{ route('empleado.destroy', $empleado->id) }}"
-                  method="POST">
+                  class="d-inline" method="POST">
                   @csrf
                   @method('DELETE')
                   {{-- {{ method_field('DELETE') }} --}}
                   <input type="submit" value="Borrar"
+                    class="btn btn-danger"
                     onclick="return confirm('Quieres borrar?')">
                 </form>
 
@@ -64,7 +64,7 @@
           @endforeach
         </tbody>
         <tfoot>
-
+          
         </tfoot>
       </table>
     </div>

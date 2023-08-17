@@ -1,25 +1,56 @@
 {{-- Formulario que tendra los datos en comun con create y edit --}}
-<h1>{{ $modo }} empleado</h1>
+<h1 class="fw-bold my-4">{{ $modo }} empleado</h1>
 
-<label for="Nombre">Nombre</label>
-<input type="text" name="Nombre" id="Nombre" value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}">
+<div class="form-group">
+  <label class="form-label" for="Nombre">Nombre</label>
+  <input class="form-control" type="text" name="Nombre"
+    id="Nombre"
+    value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}">
+</div>
 
-<label for="ApellidoPaterno">Apellido Paterno</label>
-<input type="text" name="ApellidoPaterno" id="ApellidoPaterno" value="{{ isset($empleado->ApellidoPaterno) ? $empleado->ApellidoPaterno : '' }}">
+<div class="form-group">
 
-<label for="ApellidoMaterno">Apellido Materno</label>
-<input type="text" name="ApellidoMaterno" id="ApellidoMaterno" value="{{ isset($empleado->ApellidoMaterno) ? $empleado->ApellidoMaterno : '' }}">
+  <label class="form-label" for="ApellidoPaterno">Apellido
+    Paterno</label>
+  <input class="form-control" type="text"
+    name="ApellidoPaterno" id="ApellidoPaterno"
+    value="{{ isset($empleado->ApellidoPaterno) ? $empleado->ApellidoPaterno : '' }}">
+</div>
 
-<label for="Correo">Correo</label>
-<input type="text" name="Correo" id="Correo" value="{{ isset($empleado->Correo) ? $empleado->Correo : '' }}">
 
-<label for="Foto">Foto</label>
-@if (@isset($empleado->Foto))
-    <img src="{{ asset('storage').'/'.$empleado->Foto }}" alt="Imagen" />
-@endif
+<div class="form-group">
 
-<input type="file" name="Foto" id="Foto" value="">
+  <label class="form-label" for="ApellidoMaterno">Apellido
+    Materno</label>
+  <input class="form-control" type="text"
+    name="ApellidoMaterno" id="ApellidoMaterno"
+    value="{{ isset($empleado->ApellidoMaterno) ? $empleado->ApellidoMaterno : '' }}">
+</div>
 
-<input type="submit" value="{{ $modo }} datos">
+<div class="form-group">
 
-<a href="{{ route('empleado.index') }}">Regresar</a>
+  <label class="form-label" for="Correo">Correo</label>
+  <input class="form-control" type="text" name="Correo"
+    id="Correo"
+    value="{{ isset($empleado->Correo) ? $empleado->Correo : '' }}">
+</div>
+
+<div class="form-group">
+
+  <label class="form-label" for="Foto">Foto</label>
+  @if (@isset($empleado->Foto))
+    <img src="{{ asset('storage') . '/' . $empleado->Foto }}"
+      alt="Imagen" />
+  @endif
+
+  <input class="form-control" type="file" name="Foto"
+    id="Foto" value="">
+</div>
+
+<div class="d-flex flex-row-reverse mt-4">
+  <input class="btn btn-info ms-2" type="submit"
+    value="{{ $modo }} datos">
+
+  <a class="btn btn-light" href="{{ route('empleado.index') }}">Regresar</a>
+
+</div>

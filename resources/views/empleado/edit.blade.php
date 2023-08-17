@@ -10,7 +10,7 @@
 
       @include('empleado.form', [
           'modo' => 'Editar',
-      ]);
+      ])
 
     </form>
   </div>

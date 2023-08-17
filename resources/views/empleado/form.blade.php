@@ -1,4 +1,5 @@
 {{-- Formulario que tendra los datos en comun con create y edit --}}
+<h1>{{ $modo }} empleado</h1>
 
 <label for="Nombre">Nombre</label>
 <input type="text" name="Nombre" id="Nombre" value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}">
@@ -19,6 +20,6 @@
 
 <input type="file" name="Foto" id="Foto" value="">
 
-<input type="submit" value="GuardarDatos">
+<input type="submit" value="{{ $modo }} datos">
 
 <a href="{{ route('empleado.index') }}">Regresar</a>

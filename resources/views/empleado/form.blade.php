@@ -20,3 +20,5 @@
 <input type="file" name="Foto" id="Foto" value="">
 
 <input type="submit" value="GuardarDatos">
+
+<a href="{{ route('empleado.index') }}">Regresar</a>

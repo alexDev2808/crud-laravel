@@ -1,5 +1,5 @@
 Mostrar lista de empleados
-
+<a href="{{ route('empleado.create') }}">Registar nuevo empleado</a>
 <div class="table-responsive-md">
   <table
     class="table table-striped

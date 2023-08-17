@@ -44,7 +44,8 @@ class EmpleadoController extends Controller
         }
         Empleado::insert($datosEmpleado);
         // return response()->json($datosEmpleado);
-        return view('empleado.index');
+        // return view('empleado.index');
+        return redirect('empleado')->with('mensaje', 'Empleado agregado con exito');
     }
 
     /**
@@ -109,6 +110,6 @@ class EmpleadoController extends Controller
             Empleado::destroy($id);
         }
 
-        return redirect('empleado');
+        return redirect('empleado')->with('mensaje', 'Empleado borrado con exito');
     }
 }

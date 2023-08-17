@@ -1,4 +1,9 @@
-Mostrar lista de empleados
+{{-- Mostrar lista de empleados --}}
+
+@if (Session::has('mensaje'))
+    {{ Session::get('mensaje') }}
+@endif
+
 <a href="{{ route('empleado.create') }}">Registar nuevo empleado</a>
 <div class="table-responsive-md">
   <table

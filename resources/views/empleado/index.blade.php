@@ -4,9 +4,22 @@
 @section('content')
   <div class="container">
 
-    @if (Session::has('mensaje'))
-      {{ Session::get('mensaje') }}
-    @endif
+    <div class="alert alert-success alert-dismissible fade show"
+      role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button>
+      @if (Session::has('mensaje'))
+        {{ Session::get('mensaje') }}
+      @endif
+    </div>
+
+    <script>
+      var alertList = document.querySelectorAll('.alert');
+      alertList.forEach(function(alert) {
+        new bootstrap.Alert(alert)
+      })
+    </script>
+
 
     <a href="{{ route('empleado.create') }}"
       class="btn btn-success mb-4">Registar nuevo
@@ -64,7 +77,7 @@
           @endforeach
         </tbody>
         <tfoot>
-          
+
         </tfoot>
       </table>
     </div>

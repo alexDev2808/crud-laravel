@@ -81,6 +81,7 @@
 
         </tfoot>
       </table>
+      {!! $empleados->links() !!}
     </div>
   </div>
 @endsection

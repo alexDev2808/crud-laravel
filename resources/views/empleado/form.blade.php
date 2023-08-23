@@ -1,6 +1,20 @@
 {{-- Formulario que tendra los datos en comun con create y edit --}}
 <h1 class="fw-bold my-4">{{ $modo }} empleado</h1>
 
+@if (count($errors) > 0)
+
+  <div class="alert alert-danger" role="alert">
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+
+
+
+@endif
+
 <div class="form-group">
   <label class="form-label" for="Nombre">Nombre</label>
   <input class="form-control" type="text" name="Nombre"
@@ -51,6 +65,7 @@
   <input class="btn btn-info ms-2" type="submit"
     value="{{ $modo }} datos">
 
-  <a class="btn btn-light" href="{{ route('empleado.index') }}">Regresar</a>
+  <a class="btn btn-light"
+    href="{{ route('empleado.index') }}">Regresar</a>
 
 </div>

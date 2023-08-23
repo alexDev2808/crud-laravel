@@ -19,7 +19,7 @@
   <label class="form-label" for="Nombre">Nombre</label>
   <input class="form-control" type="text" name="Nombre"
     id="Nombre"
-    value="{{ isset($empleado->Nombre) ? $empleado->Nombre : '' }}">
+    value="{{ isset($empleado->Nombre) ? $empleado->Nombre:old('Nombre') }}">
 </div>
 
 <div class="form-group">
@@ -28,7 +28,7 @@
     Paterno</label>
   <input class="form-control" type="text"
     name="ApellidoPaterno" id="ApellidoPaterno"
-    value="{{ isset($empleado->ApellidoPaterno) ? $empleado->ApellidoPaterno : '' }}">
+    value="{{ isset($empleado->ApellidoPaterno) ? $empleado->ApellidoPaterno:old('ApellidoPaterno') }}">
 </div>
 
 
@@ -38,7 +38,7 @@
     Materno</label>
   <input class="form-control" type="text"
     name="ApellidoMaterno" id="ApellidoMaterno"
-    value="{{ isset($empleado->ApellidoMaterno) ? $empleado->ApellidoMaterno : '' }}">
+    value="{{ isset($empleado->ApellidoMaterno) ? $empleado->ApellidoMaterno:old('ApellidoMaterno') }}">
 </div>
 
 <div class="form-group">
@@ -46,7 +46,7 @@
   <label class="form-label" for="Correo">Correo</label>
   <input class="form-control" type="text" name="Correo"
     id="Correo"
-    value="{{ isset($empleado->Correo) ? $empleado->Correo : '' }}">
+    value="{{ isset($empleado->Correo) ? $empleado->Correo:old('Correo') }}">
 </div>
 
 <div class="form-group">

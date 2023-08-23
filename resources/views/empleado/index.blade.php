@@ -4,14 +4,15 @@
 @section('content')
   <div class="container">
 
-    <div class="alert alert-success alert-dismissible fade show"
-      role="alert">
-      <button type="button" class="btn-close" data-bs-dismiss="alert"
-        aria-label="Close"></button>
-      @if (Session::has('mensaje'))
+    @if (Session::has('mensaje'))
+      <div class="alert alert-success alert-dismissible fade show"
+        role="alert">
+        <button type="button" class="btn-close"
+          data-bs-dismiss="alert" aria-label="Close"></button>
+
         {{ Session::get('mensaje') }}
-      @endif
-    </div>
+      </div>
+    @endif
 
     <script>
       var alertList = document.querySelectorAll('.alert');
